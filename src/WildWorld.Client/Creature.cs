@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace WildWorld
 {
@@ -58,7 +59,7 @@ namespace WildWorld
 		public Creature Fight(Creature target)
 		{
 			target.HitPoints = target.HitPoints - this.Damage;
-			Console.WriteLine(string.Format("{0} нанес {1} {2} ед. урона.", this, target, this.Damage));
+			Trace.WriteLine(string.Format("{0} нанес {1} {2} ед. урона.", this, target, this.Damage));
 
 			if (this._fightAbility != null)
 			{
@@ -72,7 +73,7 @@ namespace WildWorld
 			}
 			else
 			{
-				Console.WriteLine(string.Format("В бою победил {0}", this));
+				Trace.WriteLine(string.Format("В бою победил {0}", this));
 				return this;
 			}
 		}

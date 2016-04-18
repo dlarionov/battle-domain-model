@@ -21,7 +21,7 @@ namespace WildWorld
 		{
 			return _agressors.Select((s) =>
 			{
-				return s.Eat(_defenders.Where(t => t.Alive));
+				return s.TryEat(_defenders.Where(t => t.Alive));
 			}).Reverse().Take(1).First();
 		}
 	}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace WildWorld
 {
@@ -23,29 +24,29 @@ namespace WildWorld
 		/// </summary>
 		/// <param name="target">кого съесть</param>
 		/// <returns>успешно ли съедено</returns>
-		public bool Eat(Creature target)
+		public bool TryEat(Creature target)
 		{
 			if (CanEat(target))
 			{
-				Console.WriteLine(string.Format("{0} хочет съесть {1}", this, target));
+				Trace.WriteLine(string.Format("{0} хочет съесть {1}", this, target));
 
 				// проверяем, кто победил в сражении
 				var result = ReferenceEquals(this, this.Fight(target));
 
 				if (result)
 				{
-					Console.WriteLine(string.Format("{0} cъел {1}", this, target));
+					Trace.WriteLine(string.Format("{0} cъел {1}", this, target));
 				}
 				else
 				{
-					Console.WriteLine(string.Format("У {0} не вышло съесть {1}", this, target));
+					Trace.WriteLine(string.Format("У {0} не вышло съесть {1}", this, target));
 				}
 
 				return result;
 			}
 			else
 			{
-				Console.WriteLine(string.Format("{0} не может есть {1}", this, target));
+				Trace.WriteLine(string.Format("{0} не может есть {1}", this, target));
 				return false;
 			}
 		}
@@ -55,19 +56,19 @@ namespace WildWorld
 		/// </summary>
 		/// <param name="creatures">коллекция существ</param>
 		/// <returns>успешно ли съели всю группу</returns>
-		public bool Eat(IEnumerable<Creature> creatures)
+		public bool TryEat(IEnumerable<Creature> creatures)
 		{
-			Console.WriteLine(string.Format("{0} хочет съесть группу существ", this));
+			Trace.WriteLine(string.Format("{0} хочет съесть группу существ", this));
 
 			foreach (var i in creatures)
 			{
-				if (!Eat(i))
+				if (!TryEat(i))
 				{
 					return false;
 				}
 			}
 
-			Console.WriteLine(string.Format("{0} съел группу существ", this));
+			Trace.WriteLine(string.Format("{0} съел группу существ", this));
 			return true;
 		}
 	}
