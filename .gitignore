@@ -1,0 +1,17 @@
+*.user
+*.suo
+*.log
+
+[Oo]bj/
+[Bb]in/
+TestResults/
+
+UpgradeLog.*
+
+nuget.exe
+Thumbs.db
+config.rb
+
+dist/
+packages/
+
