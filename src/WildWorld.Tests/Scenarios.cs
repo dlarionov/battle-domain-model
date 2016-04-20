@@ -62,7 +62,7 @@ namespace WildWorld.Tests
 			Assert.IsFalse(ogre.Alive);
 			Assert.IsTrue(troll.Alive);
 		}
-		
+
 		/// <summary>
 		/// Группа огров успешно съели группу гоблинов.
 		/// </summary>
@@ -98,12 +98,7 @@ namespace WildWorld.Tests
 		public void Test5()
 		{
 			var ogre = new Ogre(Race.Human);
-			var troll = new Troll(Race.Orc, (s, t) =>
-			{
-				s.HitPoints = s.HitPoints + 1; // heals 1 hp every atack
-				t.HitPoints = t.HitPoints - 4; // and adds 4 additional damage
-				//Trace.WriteLine(string.Format("{0} нанес {1} {2} ед. урона волшебным мечом и восполнил {3} ед. здоровья.", s, t, 4, 1));
-			});
+			var troll = new Troll(Race.Orc, Weapon.MagicSword);
 			var eating = new Eating(
 				new Ogre[]
 				{ 
