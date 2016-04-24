@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WildWorld.Client\WildWorld.Client.csproj">
+    <ProjectReference Include="..\WildWorld\WildWorld.csproj">
       <Project>{8c6504a4-6eaa-4916-a954-9373940d0f3a}</Project>
-      <Name>WildWorld.Client</Name>
+      <Name>WildWorld</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
