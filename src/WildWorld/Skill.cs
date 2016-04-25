@@ -3,24 +3,24 @@
 namespace WildWorld
 {
 	/// <summary>
-	/// Рассовая способность
+	/// Умение
 	/// </summary>
-	public static class Race
+	public static class Skill
 	{
 		/// <summary>
-		/// Орки толстые
+		/// Выживание
 		/// </summary>
 		/// <param name="creature"></param>
-		public static void Orc(Creature creature)
+		public static void Surival(Creature creature)
 		{
 			creature.HitPoints = creature.HitPoints + 1;
 		}
 
 		/// <summary>
-		/// Люди наносят больший урон
+		/// Драка
 		/// </summary>
 		/// <param name="creature"></param>
-		public static void Human(Creature creature)
+		public static void Combat(Creature creature)
 		{
 			creature.Damage = creature.Damage + 1;
 		}

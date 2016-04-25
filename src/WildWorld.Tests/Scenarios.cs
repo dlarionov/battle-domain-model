@@ -28,8 +28,8 @@ namespace WildWorld.Tests
 		[TestMethod]
 		public void Test2()
 		{
-			var orc = new Troll(Race.Orc);
-			var human = new Troll(Race.Human);
+			var orc = new Troll(Skill.Surival);
+			var human = new Troll(Skill.Combat);
 			var sheep = new Sheep();
 
 			var winner = (Agressor)orc.Fight(human);
@@ -46,8 +46,8 @@ namespace WildWorld.Tests
 		[TestMethod]
 		public void Test3()
 		{
-			var ogre = new Ogre(Race.Orc);
-			var troll = new Troll(Race.Human);
+			var ogre = new Ogre(Skill.Surival);
+			var troll = new Troll(Skill.Combat);
 			var gangOfTrolls = new Troll[]
 			{ 
 				new Troll(),
@@ -97,12 +97,12 @@ namespace WildWorld.Tests
 		[TestMethod]
 		public void Test5()
 		{
-			var ogre = new Ogre(Race.Human);
-			var troll = new Troll(Race.Orc, Weapon.MagicSword);
+			var ogre = new Ogre(Skill.Combat);
+			var troll = new Troll(Skill.Surival, Weapon.MagicSword);
 			var eating = new Eating(
 				new Ogre[]
 				{ 
-					new Ogre(Race.Human),
+					new Ogre(Skill.Combat),
 					ogre
 				},
 				new Troll[] 
@@ -123,7 +123,7 @@ namespace WildWorld.Tests
 		[TestMethod]
 		public void Test6()
 		{
-			var ogre = new Ogre(Race.Orc);
+			var ogre = new Ogre(Skill.Surival);
 			var troll = new Troll();
 			var battle = new Battle(
 				new Creature[]
@@ -137,7 +137,7 @@ namespace WildWorld.Tests
 				},
 				new Ogre[]
 				{ 
-					new Ogre(Race.Human),
+					new Ogre(Skill.Combat),
 					ogre
 				});
 
